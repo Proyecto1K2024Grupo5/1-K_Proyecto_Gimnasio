@@ -10,7 +10,7 @@
 
 #### 5. Data Definition Language (DDL) [Click here](https://github.com/Proyecto1K2024Grupo5/1-K_Proyecto_Gimnasio/blob/main/src/Docs/5.%20DDL.md)
 
-#### 6. Data Manipulation Language (DML) [Click here](https://github.com/Proyecto1K2024Grupo5/1K_Proyecto_Gimnasio/blob/main/src/Docs/5.%20DML.md)
+#### 6. Data Manipulation Language (DML) [Click here](https://github.com/Proyecto1K2024Grupo5/1-K_Proyecto_Gimnasio/blob/main/src/Docs/6.%20DML.md)
 
 #### 7. Data Query Language (DQL) [Click here](https://github.com/Proyecto1K2024Grupo5/1-K_Proyecto_Gimnasio/blob/main/src/Docs/7.%20DQL.md)
 
