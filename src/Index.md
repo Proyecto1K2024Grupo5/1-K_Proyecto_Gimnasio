@@ -17,7 +17,7 @@
 #### 6. Data Manipulation Language (DML)
 #### [Click here](https://github.com/Proyecto1K2024Grupo5/1-K_Proyecto_Gimnasio/blob/main/src/Docs/5.%20DML.md)
 
-####  Data Query Language (DQL)
+#### 7. Data Query Language (DQL)
 #### [Click here](https://github.com/Proyecto1K2024Grupo5/1-K_Proyecto_Gimnasio/blob/main/src/Docs/7.%20DQL.md)
 
 #### Project Managers
