@@ -3,7 +3,7 @@
 
 #### 2. Extended Entidad Relación (EER) #### [Click here](https://github.com/Proyecto1K2024Grupo5/1-K_Proyecto_Gimnasio/blob/main/src/Docs/2.%20EER.md)
 
-#### 3. Modelo Relacional (MR) #### [Click here](https://github.com/Proyecto1K2024Grupo5/1-K_Proyecto_Gimnasio/blob/main/src/Docs/3.%20MR.md)
+#### 3. Modelo Relacional (MR) **[Click here](https://github.com/Proyecto1K2024Grupo5/1-K_Proyecto_Gimnasio/blob/main/src/Docs/3.%20MR.md)**
 
 #### 4. Diccionario de Datos (DD) #### [Click here](https://github.com/Proyecto1K2024Grupo5/1-K_Proyecto_Gimnasio/blob/main/src/Docs/4.%20DD.md)
 
