@@ -17,12 +17,15 @@
 #### 6. Data Manipulation Language (DML)
 #### [Click here](https://github.com/Proyecto1K2024Grupo5/1-K_Proyecto_Gimnasio/blob/main/src/Docs/5.%20DML.md)
 
+####  Data Query Language (DQL)
+#### [Click here](https://github.com/Proyecto1K2024Grupo5/1-K_Proyecto_Gimnasio/blob/main/src/Docs/7.%20DQL.md)
+
 #### Project Managers
 ##### 1. Fernando Rodríguez : https://github.com/Fernan1590
   
 ##### 2. Juan Sebastián Franco : https://github.com/ZianFranxes
   
-##### 3. Cristian Sánchez https://github.com/cristian11sm
+##### 3. Cristian Sánchez : https://github.com/cristian11sm
    
 
 
