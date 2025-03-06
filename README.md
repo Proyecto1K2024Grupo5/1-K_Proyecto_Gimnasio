@@ -1,7 +1,6 @@
 # Proyecto intermodular Gimnasio
 
-**Este es el repositorio del grupo 5 de proyecto intermodular de 1ºK DAM.
-Trata sobre un gimnasio y su base de datos.**
+**Este es el repositorio del grupo 5 de proyecto intermodular de 1ºK DAM.**
 
 ## 1. [Sistema de información (SI)](https://github.com/Proyecto1K2024Grupo5/1-K_Proyecto_Gimnasio/blob/main/src/Docs/1.%20SI.md)
 
