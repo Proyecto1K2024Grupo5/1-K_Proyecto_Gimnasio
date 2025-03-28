@@ -30,6 +30,7 @@ begin
     select count(*) * 60 into @miembrosGold from cliente where tipoMembresia = "GOLD";
     select count(*) * 40 into @miembrosSilver from cliente where tipoMembresia = "SILVER";
     select count(*) * 20 into @miembrosBronze from cliente where tipoMembresia = "BRONZE";
+    -- Sumo el total de las cantidades guardadas en las variables locales y lo guardo en facturacionTotal
     set @facturacionTotal = @miembrosGold + @miembrosSilver + @miembrosBronze;
 
     -- Los inserto en la nueva tabla para llevar un control mensual de la facturacion de clientes que tenemos
