@@ -73,6 +73,21 @@ end;
 delimiter ;
 ```
 
+**Trigger para actualizar el contador de acceso de un cliente cada vez que accede a un gimnasio**
+```sql
+
+delimiter //
+create or replace trigger actualizadorAcceso
+after insert on ACCESO for each row
+begin
+
+    update cliente set contAcceso = contAcceso + 1 where nifCliente = new.nifCliente;
+
+end;
+//
+delimiter ;
+```
+
 
 
 
