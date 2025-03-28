@@ -18,6 +18,8 @@
 
 ## 8. [PL/SQL Avanzado](https://github.com/Proyecto1K2024Grupo5/1-K_Proyecto_Gimnasio/blob/main/src/Docs/8.%20PL%5CSQL%20Avanzado.md)
 
+## 9. [Reparto de tareas DAO](https://github.com/Proyecto1K2024Grupo5/1-K_Proyecto_Gimnasio/blob/main/src/Docs/9.%20Reparto%20de%20Tareas%20DAO.md)
+
 ### Project Managers
 ##### 1. Fernando Rodríguez : https://github.com/Fernan1590
   
