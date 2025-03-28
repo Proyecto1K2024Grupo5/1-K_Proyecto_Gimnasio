@@ -12,7 +12,7 @@
 
 ### Definición de 2 eventos que automaticen tareas con diferente periodicidad.
 
--- Evento para añadir a una tabla facturacionMensual la facturacion total de cada mes
+**Evento para añadir a una tabla facturacionMensual la facturacion total de cada mes**
 ```sql
 delimiter //
 create event gananciaTotalMes
@@ -33,36 +33,36 @@ end
 //
 delimiter ;
 ```
+
+create or replace table totalClientesMembresia (
+    idRegistro int auto_increment primary key,
+    fechaRegistro date default now(),
+    clientesGold int,
+    clientesSilver int,
+    clientesBronze int,
+    totalClientes int
+);
+
+
+**Evento para mantener actualizados mes a mes el numero totales de clientes por tipo de membresia y total**
 ```sql
-SELECT nombre, apellidos
-FROM CLIENTE
-WHERE contAcceso = (SELECT MAX(contAcceso) FROM CLIENTE);
+delimiter //
+create event totalClientes
+on schedule every 1 month
+do
+begin
 
-SELECT nombre, email
-FROM CLIENTE
-WHERE falta = (SELECT MIN(falta) FROM CLIENTE);
+    -- Consigo la cantidad de clientes diferenciados por tipo de membresia
+    select count(*) into @miembrosGold from cliente where tipoMembresia = "GOLD";
+    select count(*) into @miembrosSilver from cliente where tipoMembresia = "SILVER";
+    select count(*) into @miembrosBronze from cliente where tipoMembresia = "BRONZE";
+    select count(*) into @clientesTotales from cliente;
 
-SELECT G.codigo, G.nombre
-FROM GIMNASIO G
-WHERE G.codigo IN (
-SELECT DISTINCT S.codGimnasio
-FROM SALA S
-JOIN RESERVA R ON S.id = R.idSala
-);
+    -- Los inserto en la nueva tabla para llevar un control mensual de la cantidad de clientes que tenemos
+    insert into `totalClientesMembresia` (clientesGold, clientesSilver, clientesBronze, totalClientes) values (
+        @miembrosGold, @miembrosSilver, @miembrosBronze, @clientesTotales);
 
-SELECT nombre, apellidos
-FROM CLIENTE C
-WHERE EXISTS (
-SELECT 1 FROM RESERVA R WHERE R.nifCliente = C.nif
-);
-
-SELECT T.nif, T.nombre, T.apellidos, T.email
-FROM TRABAJADOR T
-WHERE T.nif = (
-SELECT D.nifMonitor
-FROM DIRIGIR D
-GROUP BY D.nifMonitor
-ORDER BY COUNT(D.idClase) DESC
-LIMIT 1
-);
-```  
+end;
+//
+delimiter ;
+```
