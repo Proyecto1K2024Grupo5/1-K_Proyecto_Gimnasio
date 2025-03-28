@@ -169,7 +169,55 @@ CALL ac1114procReserva();
 -- Consultar la tabla
 SELECT * FROM cliente_reserva;
 ```
-![image](https://github.com/user-attachments/assets/05d9b51b-ce8a-43f5-94dd-b1a7056ba77b)
+![image](https://github.com/user-attachments/assets/05d9b51b-ce8a-43f5-94dd-b1a7056ba77b)  
+
+**Cursor que duplique la tabla trabajador y añada su turno si tiene**
+```sql
+-- Crear una tabla copia a partir de la tabla Trabajador 
+CREATE OR REPLACE TABLE trabajador_turno AS SELECT * FROM `TRABAJADOR`;
+
+
+-- Sobre la nueva tabla, añadir un campo para saber el horario que tendra el
+-- trabajador (null en caso contrario) 
+ALTER TABLE trabajador_turno 
+ADD COLUMN Turno ENUM ("MAÑANA", "TARDE");
+
+DELIMITER //
+CREATE OR REPLACE PROCEDURE ac1114procTurno()
+BEGIN
+    -- Se declara el cursor del tipo de tabla SUPERVISAR
+    DECLARE rowSu ROW TYPE OF SUPERVISAR;
+    DECLARE fin INT DEFAULT FALSE;
+    -- El cursor recorrera toda la tabla
+    DECLARE cur CURSOR FOR SELECT * FROM `SUPERVISAR`; 
+    DECLARE CONTINUE HANDLER FOR NOT FOUND SET fin = TRUE;
+
+    OPEN cur;
+
+    -- Entramos a un bucle WHILE hasta que se recorra todo
+    WHILE fin = FALSE DO
+        FETCH cur INTO rowSu;
+
+        IF fin = FALSE THEN
+            -- Actualizar la tabla trabajador_turno con su turno correspondiente
+            UPDATE trabajador_turno SET Turno = rowSu.turno WHERE nif = rowSu.nifSupervisor;
+        END IF;
+    END WHILE;
+
+    CLOSE cur;
+END;
+//
+DELIMITER ;
+
+-- Llamar al proceso
+CALL ac1114procTurno();
+
+-- Consultar la tabla
+SELECT * FROM trabajador_turno;
+```
+![image](https://github.com/user-attachments/assets/b7fadf78-522c-4e3a-a1f1-67a5b6b37054)
+
+### Definición de 2 Procedimientos con cursores --> Franco
 
 
 
