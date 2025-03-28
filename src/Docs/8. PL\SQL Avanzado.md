@@ -34,6 +34,7 @@ begin
     select count(*) * 20 into @miembrosBronze from cliente where tipoMembresia = "BRONZE";
     set @facturacionTotal = @miembrosGold + @miembrosSilver + @miembrosBronze;
 
+    -- Los inserto en la nueva tabla para llevar un control mensual de la facturacion de clientes que tenemos
     insert into facturacionMensual(facturacion) values (@facturacionTotal);
 
 end
@@ -73,3 +74,11 @@ end;
 //
 delimiter ;
 ```
+
+
+
+
+
+
+### Definición de 2 eventos --> Fernando
+### Definición de 2 disparadores --> Fernando
