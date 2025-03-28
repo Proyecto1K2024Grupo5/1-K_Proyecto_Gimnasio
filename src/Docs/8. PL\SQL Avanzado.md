@@ -68,7 +68,8 @@ begin
     insert into `totalClientesMembresia` (clientesGold, clientesSilver, clientesBronze, totalClientes) values (
         @miembrosGold, @miembrosSilver, @miembrosBronze, @clientesTotales);
 
-    -- Ademas como se activa al inicio del mes, ponemos todos los contadores de acceso de todos los clientes a 0 para reiniciar el control de acceso
+    -- Ademas como se activa al inicio del mes, ponemos todos los contadores de acceso de todos los clientes a 0
+    -- para reiniciar el control de acceso
     update cliente set contAcceso = 0;
 
 end;
@@ -86,7 +87,8 @@ create or replace trigger actualizadorAcceso
 after insert on ACCESO for each row
 begin
 
-    -- Declaro dos variables para averiguar el tipo de membresia que tiene el cliente y el numero de reservas que ha hecho
+    -- Declaro dos variables para averiguar el tipo de membresia que tiene el cliente y el
+    -- numero de reservas que ha hecho
     declare _tipoMembresia varchar(64);
     declare _contAcceso int;
     select tipoMembresia into _tipoMembresia from cliente where nif = new.nif;
@@ -99,7 +101,8 @@ begin
     elseif _tipoMembresia = "Bronze" and _contAcceso = 10 then
         signal sqlstate '45000'
             set Message_TEXT = "Has alcanzado el maximo de reservas para este mes";
-    -- Si tiene la membresia gold o no ha llegado al limite de las otras dos membresias simplemente le sumo 1 al contador de acceso
+    -- Si tiene la membresia gold o no ha llegado al limite de las otras dos membresias
+    -- simplemente le sumo 1 al contador de acceso
     else
         update cliente set contAcceso = contAcceso + 1 where nif = new.nif;
     end if;
