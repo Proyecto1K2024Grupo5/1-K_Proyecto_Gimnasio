@@ -124,7 +124,7 @@ delimiter ;
 
 
 ### Definición de 2 eventos --> Fernando
-### Definición de 2 disparadores --> Fernando  
+### Definición de 2 disparadores --> Fernando
 
 
 
@@ -169,7 +169,8 @@ CALL ac1114procReserva();
 -- Consultar la tabla
 SELECT * FROM cliente_reserva;
 ```
-![image](https://github.com/user-attachments/assets/05d9b51b-ce8a-43f5-94dd-b1a7056ba77b)  
+![image](https://github.com/user-attachments/assets/05d9b51b-ce8a-43f5-94dd-b1a7056ba77b)
+
 
 **Cursor que duplique la tabla trabajador y añada su turno si tiene**
 ```sql
