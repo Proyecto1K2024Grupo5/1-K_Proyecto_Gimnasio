@@ -125,3 +125,50 @@ delimiter ;
 
 ### Definición de 2 eventos --> Fernando
 ### Definición de 2 disparadores --> Fernando
+
+
+
+### Definición de 2 procedimientos almacenados que utilicen cursores que recorran cierta cantidad de datos.
+**Cursor que duplique la tabla cliente y añada su id de reserva si existe**
+```sql
+-- Crear una tabla copia a partir de la tabla cliente 
+CREATE OR REPLACE TABLE cliente_reserva AS SELECT * FROM CLIENTE;
+
+-- Sobre la nueva tabla, añadir un campo para saber el id de la sala que ha reservado (si lo ha hecho, en caso que no queda null)
+ALTER TABLE cliente_reserva 
+ADD COLUMN idReserva INT;
+
+DELIMITER //
+CREATE OR REPLACE PROCEDURE ac1112procReserva()
+BEGIN
+    DECLARE rowRe ROW TYPE OF RESERVA;
+    DECLARE fin INT DEFAULT FALSE;
+    DECLARE cur CURSOR FOR SELECT * FROM `RESERVA`; 
+    DECLARE CONTINUE HANDLER FOR NOT FOUND SET fin = TRUE;
+
+    OPEN cur;
+
+    WHILE fin = FALSE DO
+        FETCH cur INTO rowRe;
+
+        IF fin = FALSE THEN
+            -- Actualizar la tabla cliente_copia con el ID de su sala correspondiente
+            UPDATE cliente_reserva SET idReserva = rowRe.idSala WHERE nif = rowRe.nifCliente;
+        END IF;
+    END WHILE;
+
+    CLOSE cur;
+END;
+//
+DELIMITER ;
+
+-- Llamar al proceso
+CALL ac1112procReserva();
+
+-- Consultar la tabla
+SELECT * FROM cliente_reserva;
+```
+![image](https://github.com/user-attachments/assets/05d9b51b-ce8a-43f5-94dd-b1a7056ba77b)
+
+
+
