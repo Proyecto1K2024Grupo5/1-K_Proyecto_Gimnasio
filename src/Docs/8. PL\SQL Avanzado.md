@@ -124,7 +124,8 @@ delimiter ;
 
 
 ### Definición de 2 eventos --> Fernando
-### Definición de 2 disparadores --> Fernando
+### Definición de 2 disparadores --> Fernando  
+
 
 
 
@@ -139,7 +140,7 @@ ALTER TABLE cliente_reserva
 ADD COLUMN idReserva INT;
 
 DELIMITER //
-CREATE OR REPLACE PROCEDURE ac1112procReserva()
+CREATE OR REPLACE PROCEDURE ac1114procReserva()
 BEGIN
     DECLARE rowRe ROW TYPE OF RESERVA;
     DECLARE fin INT DEFAULT FALSE;
@@ -163,7 +164,7 @@ END;
 DELIMITER ;
 
 -- Llamar al proceso
-CALL ac1112procReserva();
+CALL ac1114procReserva();
 
 -- Consultar la tabla
 SELECT * FROM cliente_reserva;
