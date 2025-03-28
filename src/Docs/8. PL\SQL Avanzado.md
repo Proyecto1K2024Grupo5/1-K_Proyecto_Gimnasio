@@ -1,6 +1,6 @@
 ## [Index](https://github.com/Proyecto1K2024Grupo5/1-K_Proyecto_Gimnasio/tree/main)  
 1. [Eventos](https://github.com/Proyecto1K2024Grupo5/1-K_Proyecto_Gimnasio/blob/main/src/Docs/8.%20PL%5CSQL%20Avanzado.md)
-2. [Triggers](https://github.com/Proyecto1K2024Grupo5/1-K_Proyecto_Gimnasio/blob/main/src/Docs/8.%20PL%5CSQL%20Avanzado.md)  
+2. [Triggers](https://github.com/Proyecto1K2024Grupo5/1-K_Proyecto_Gimnasio/blob/main/src/Docs/8.%20PL%5CSQL%20Avanzado.md#definición-de-2-disparadores-sobre-operaciones-asociadas-al-modelo-de-datos)  
 3. [Procedure + Transaction] 
 4. [Procedure + Cursor]
 
