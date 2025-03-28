@@ -80,7 +80,7 @@ delimiter //
 create or replace trigger actualizadorAcceso
 after insert on ACCESO for each row
 begin
-
+    -- Actualizo el contador de acceso del cliente 
     update cliente set contAcceso = contAcceso + 1 where nifCliente = new.nifCliente;
 
 end;
