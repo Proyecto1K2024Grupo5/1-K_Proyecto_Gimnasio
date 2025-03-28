@@ -128,6 +128,80 @@ delimiter ;
 
 
 
+### Definición de 2 procedimientos almacenados que realicen más de una operación dentro de una transacción, haciendo una gestión adecuada de los errores.
+**Procedimiento para registrar el acceso de los clientes**
+```sql
+DELIMITER //
+CREATE PROCEDURE registrarAcceso(
+    IN nifClientee VARCHAR(9),
+    IN codGimnasioo INT,
+    IN fEntradaa DATE
+)
+BEGIN
+    DECLARE mensaje VARCHAR(100);
+    DECLARE EXIT HANDLER FOR SQLEXCEPTION
+    BEGIN
+        ROLLBACK;
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'Error al registrar el acceso';
+    END;
+
+    START TRANSACTION;
+
+    --Verifico si existe el cliente
+    IF NOT EXISTS (SELECT 1 FROM CLIENTE WHERE nif = nifClientee) THEN
+        SET mensaje = CONCAT('El cliente', nifClientee, 'no existe');
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT= mensaje;
+    END IF;
+    --Si existe, registro el acceso
+    INSERT INTO ACCESO (fEntrada, nifCliente, codGimnasio) 
+    VALUES (fEntradaa, nifClientee, codGimnasioo);
+    COMMIT;
+END //
+DELIMITER;
+```
+**Procedimiento para cambiar la membresia de los clientes**
+```sql
+DELIMITER //
+CREATE PROCEDURE cambiarMembresia(
+    IN nifClientee VARCHAR(9),
+    IN tipoMembresiaa VARCHAR(12)
+)
+BEGIN
+    DECLARE mensaje VARCHAR(100);
+    DECLARE mensaje2 VARCHAR(100);
+    DECLARE EXIT HANDLER FOR SQLEXCEPTION
+    BEGIN
+        ROLLBACK;
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'Error al actualizar la membresía';
+    END;
+
+    START TRANSACTION;
+    
+    --verifico que existe el cliente
+    IF NOT EXISTS (SELECT 1 FROM CLIENTE WHERE nif = nifClientee) THEN
+        SET mensaje = CONCAT('El cliente', nifClientee, 'no existe');
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT= mensaje;
+    END IF;
+    --Verifico que existe la membresia
+    IF NOT EXISTS (SELECT 1 FROM MEMBRESIA WHERE tipo = tipoMembresiaa) THEN
+        SET mensaje2 = CONCAT('El tipo de membresía', tipoMembresiaa, 'no es válido');
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT= mensaje2;
+    END IF;
+    --si ambos existen, cambio o actualizo la membresia
+    UPDATE CLIENTE SET tipoMembresia = tipoMembresiaa WHERE nif = nifClientee;
+    COMMIT;
+END//
+DELIMITER ;
+```
+### Definición de 2 Procedimientos con transacciones --> Cristian
+
+
+
 
 ### Definición de 2 procedimientos almacenados que utilicen cursores que recorran cierta cantidad de datos.
 **Cursor que duplique la tabla cliente y añada su id de reserva si existe**
@@ -219,80 +293,6 @@ SELECT * FROM trabajador_turno;
 ![image](https://github.com/user-attachments/assets/b7fadf78-522c-4e3a-a1f1-67a5b6b37054)
 
 ### Definición de 2 Procedimientos con cursores --> Franco
-
-### Definición de 2 procedimientos almacenados que realicen más de una operación dentro de una transacción, haciendo una gestión adecuada de los errores.
-
-**Procedimiento para registrar el acceso de los clientes**
-```sql
-DELIMITER //
-CREATE PROCEDURE registrarAcceso(
-    IN nifClientee VARCHAR(9),
-    IN codGimnasioo INT,
-    IN fEntradaa DATE
-)
-BEGIN
-    DECLARE mensaje VARCHAR(100);
-    DECLARE EXIT HANDLER FOR SQLEXCEPTION
-    BEGIN
-        ROLLBACK;
-        SIGNAL SQLSTATE '45000'
-        SET MESSAGE_TEXT = 'Error al registrar el acceso';
-    END;
-
-    START TRANSACTION;
-
-    --Verifico si existe el cliente
-    IF NOT EXISTS (SELECT 1 FROM CLIENTE WHERE nif = nifClientee) THEN
-        SET mensaje = CONCAT('El cliente', nifClientee, 'no existe');
-        SIGNAL SQLSTATE '45000'
-        SET MESSAGE_TEXT= mensaje;
-    END IF;
-    --Si existe, registro el acceso
-    INSERT INTO ACCESO (fEntrada, nifCliente, codGimnasio) 
-    VALUES (fEntradaa, nifClientee, codGimnasioo);
-    COMMIT;
-END //
-DELIMITER;
-```
-**Procedimiento para cambiar la membresia de los clientes**
-```sql
-DELIMITER //
-CREATE PROCEDURE cambiarMembresia(
-    IN nifClientee VARCHAR(9),
-    IN tipoMembresiaa VARCHAR(12)
-)
-BEGIN
-    DECLARE mensaje VARCHAR(100);
-    DECLARE mensaje2 VARCHAR(100);
-    DECLARE EXIT HANDLER FOR SQLEXCEPTION
-    BEGIN
-        ROLLBACK;
-        SIGNAL SQLSTATE '45000'
-        SET MESSAGE_TEXT = 'Error al actualizar la membresía';
-    END;
-
-    START TRANSACTION;
-    
-    --verifico que existe el cliente
-    IF NOT EXISTS (SELECT 1 FROM CLIENTE WHERE nif = nifClientee) THEN
-        SET mensaje = CONCAT('El cliente', nifClientee, 'no existe');
-        SIGNAL SQLSTATE '45000'
-        SET MESSAGE_TEXT= mensaje;
-    END IF;
-    --Verifico que existe la membresia
-    IF NOT EXISTS (SELECT 1 FROM MEMBRESIA WHERE tipo = tipoMembresiaa) THEN
-        SET mensaje2 = CONCAT('El tipo de membresía', tipoMembresiaa, 'no es válido');
-        SIGNAL SQLSTATE '45000'
-        SET MESSAGE_TEXT= mensaje2;
-    END IF;
-    --si ambos existen, cambio o actualizo la membresia
-    UPDATE CLIENTE SET tipoMembresia = tipoMembresiaa WHERE nif = nifClientee;
-    COMMIT;
-END//
-DELIMITER ;
-```
-### Definición de 2 Procedimientos con transacciones --> Cristian
-
 
 
 
