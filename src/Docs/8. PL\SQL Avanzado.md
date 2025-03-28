@@ -76,6 +76,8 @@ end;
 delimiter ;
 ```
 
+### Definición de 2 disparadores sobre operaciones asociadas al modelo de datos.
+
 **Trigger para actualizar el contador de acceso de un cliente cada vez que accede a un gimnasio**
 ```sql
 
@@ -106,6 +108,9 @@ end;
  //
 delimiter ;
 ```
+
+
+
 
 
 
