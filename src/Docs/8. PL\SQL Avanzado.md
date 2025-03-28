@@ -80,11 +80,24 @@ delimiter //
 create or replace trigger actualizadorAcceso
 after insert on ACCESO for each row
 begin
-    -- Actualizo el contador de acceso del cliente 
-    update cliente set contAcceso = contAcceso + 1 where nifCliente = new.nifCliente;
+
+    declare _tipoMembresia varchar(64);
+    declare _contAcceso int;
+    select tipoMembresia into _tipoMembresia from cliente where nif = new.nif;
+    select contAcceso into _contAcceso from cliente where nif = new.nif;
+
+    if _tipoMembresia = "Silver" and _contAcceso = 20 then
+        signal sqlstate '45000'
+            set Message_TEXT = "Has alcanzado el maximo de reservas para este mes";
+    elseif _tipoMembresia = "Bronze" and _contAcceso = 10 then
+        signal sqlstate '45000'
+            set Message_TEXT = "Has alcanzado el maximo de reservas para este mes";
+    else
+        update cliente set contAcceso = contAcceso + 1 where nif = new.nif;
+    end if;
 
 end;
-//
+ //
 delimiter ;
 ```
 
