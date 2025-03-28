@@ -241,11 +241,13 @@ BEGIN
 
     START TRANSACTION;
 
+    --Verifico si existe el cliente
     IF NOT EXISTS (SELECT 1 FROM CLIENTE WHERE nif = nifClientee) THEN
         SET mensaje = CONCAT('El cliente', nifClientee, 'no existe');
         SIGNAL SQLSTATE '45000'
         SET MESSAGE_TEXT= mensaje;
     END IF;
+    --Si existe, registro el acceso
     INSERT INTO ACCESO (fEntrada, nifCliente, codGimnasio) 
     VALUES (fEntradaa, nifClientee, codGimnasioo);
     COMMIT;
@@ -271,16 +273,19 @@ BEGIN
 
     START TRANSACTION;
     
+    --verifico que existe el cliente
     IF NOT EXISTS (SELECT 1 FROM CLIENTE WHERE nif = nifClientee) THEN
         SET mensaje = CONCAT('El cliente', nifClientee, 'no existe');
         SIGNAL SQLSTATE '45000'
         SET MESSAGE_TEXT= mensaje;
     END IF;
+    --Verifico que existe la membresia
     IF NOT EXISTS (SELECT 1 FROM MEMBRESIA WHERE tipo = tipoMembresiaa) THEN
         SET mensaje2 = CONCAT('El tipo de membresía', tipoMembresiaa, 'no es válido');
         SIGNAL SQLSTATE '45000'
         SET MESSAGE_TEXT= mensaje2;
     END IF;
+    --si ambos existen, cambio o actualizo la membresia
     UPDATE CLIENTE SET tipoMembresia = tipoMembresiaa WHERE nif = nifClientee;
     COMMIT;
 END//
