@@ -220,5 +220,74 @@ SELECT * FROM trabajador_turno;
 
 ### Definición de 2 Procedimientos con cursores --> Franco
 
+### Definición de 2 procedimientos almacenados que realicen más de una operación dentro de una transacción, haciendo una gestión adecuada de los errores.
+
+**Procedimiento para registrar el acceso de los clientes**
+```sql
+DELIMITER //
+CREATE PROCEDURE registrarAcceso(
+    IN nifClientee VARCHAR(9),
+    IN codGimnasioo INT,
+    IN fEntradaa DATE
+)
+BEGIN
+    DECLARE mensaje VARCHAR(100);
+    DECLARE EXIT HANDLER FOR SQLEXCEPTION
+    BEGIN
+        ROLLBACK;
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'Error al registrar el acceso';
+    END;
+
+    START TRANSACTION;
+
+    IF NOT EXISTS (SELECT 1 FROM CLIENTE WHERE nif = nifClientee) THEN
+        SET mensaje = CONCAT('El cliente', nifClientee, 'no existe');
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT= mensaje;
+    END IF;
+    INSERT INTO ACCESO (fEntrada, nifCliente, codGimnasio) 
+    VALUES (fEntradaa, nifClientee, codGimnasioo);
+    COMMIT;
+END //
+DELIMITER;
+```
+**Procedimiento para cambiar la membresia de los clientes**
+```sql
+DELIMITER //
+CREATE PROCEDURE cambiarMembresia(
+    IN nifClientee VARCHAR(9),
+    IN tipoMembresiaa VARCHAR(12)
+)
+BEGIN
+    DECLARE mensaje VARCHAR(100);
+    DECLARE mensaje2 VARCHAR(100);
+    DECLARE EXIT HANDLER FOR SQLEXCEPTION
+    BEGIN
+        ROLLBACK;
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'Error al actualizar la membresía';
+    END;
+
+    START TRANSACTION;
+    
+    IF NOT EXISTS (SELECT 1 FROM CLIENTE WHERE nif = nifClientee) THEN
+        SET mensaje = CONCAT('El cliente', nifClientee, 'no existe');
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT= mensaje;
+    END IF;
+    IF NOT EXISTS (SELECT 1 FROM MEMBRESIA WHERE tipo = tipoMembresiaa) THEN
+        SET mensaje2 = CONCAT('El tipo de membresía', tipoMembresiaa, 'no es válido');
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT= mensaje2;
+    END IF;
+    UPDATE CLIENTE SET tipoMembresia = tipoMembresiaa WHERE nif = nifClientee;
+    COMMIT;
+END//
+DELIMITER ;
+```
+### Definición de 2 Procedimientos con transacciones --> Cristian
+
+
 
 
