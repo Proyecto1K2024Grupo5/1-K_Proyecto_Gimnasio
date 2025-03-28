@@ -16,6 +16,8 @@
 
 ## 7. [Data Query Language (DQL)](https://github.com/Proyecto1K2024Grupo5/1-K_Proyecto_Gimnasio/blob/main/src/Docs/7.%20DQL.md)
 
+## 8. [PL/SQL Avanzado](https://github.com/Proyecto1K2024Grupo5/1-K_Proyecto_Gimnasio/blob/main/src/Docs/7.%20DQL.md)
+
 ### Project Managers
 ##### 1. Fernando Rodríguez : https://github.com/Fernan1590
   
