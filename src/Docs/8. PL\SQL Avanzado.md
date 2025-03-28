@@ -81,17 +81,20 @@ create or replace trigger actualizadorAcceso
 after insert on ACCESO for each row
 begin
 
+    -- Declaro dos variables para averiguar el tipo de membresia que tiene el cliente y el numero de reservas que ha hecho
     declare _tipoMembresia varchar(64);
     declare _contAcceso int;
     select tipoMembresia into _tipoMembresia from cliente where nif = new.nif;
     select contAcceso into _contAcceso from cliente where nif = new.nif;
 
+    -- Dependiendo del tipo de membresia que tenga, compruébo si ha alcanzado el numero de reservas de cada tipo
     if _tipoMembresia = "Silver" and _contAcceso = 20 then
         signal sqlstate '45000'
             set Message_TEXT = "Has alcanzado el maximo de reservas para este mes";
     elseif _tipoMembresia = "Bronze" and _contAcceso = 10 then
         signal sqlstate '45000'
             set Message_TEXT = "Has alcanzado el maximo de reservas para este mes";
+    -- Si tiene la membresia gold o no ha llegado al limite de las otras dos membresias simplemente le sumo 1 al contador de acceso
     else
         update cliente set contAcceso = contAcceso + 1 where nif = new.nif;
     end if;
