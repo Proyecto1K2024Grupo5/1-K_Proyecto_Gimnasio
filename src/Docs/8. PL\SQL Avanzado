@@ -33,4 +33,36 @@ end
 //
 delimiter ;
 ```
+```sql
+SELECT nombre, apellidos
+FROM CLIENTE
+WHERE contAcceso = (SELECT MAX(contAcceso) FROM CLIENTE);
 
+SELECT nombre, email
+FROM CLIENTE
+WHERE falta = (SELECT MIN(falta) FROM CLIENTE);
+
+SELECT G.codigo, G.nombre
+FROM GIMNASIO G
+WHERE G.codigo IN (
+SELECT DISTINCT S.codGimnasio
+FROM SALA S
+JOIN RESERVA R ON S.id = R.idSala
+);
+
+SELECT nombre, apellidos
+FROM CLIENTE C
+WHERE EXISTS (
+SELECT 1 FROM RESERVA R WHERE R.nifCliente = C.nif
+);
+
+SELECT T.nif, T.nombre, T.apellidos, T.email
+FROM TRABAJADOR T
+WHERE T.nif = (
+SELECT D.nifMonitor
+FROM DIRIGIR D
+GROUP BY D.nifMonitor
+ORDER BY COUNT(D.idClase) DESC
+LIMIT 1
+);
+```  
