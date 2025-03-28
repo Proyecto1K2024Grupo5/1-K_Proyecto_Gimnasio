@@ -1,5 +1,5 @@
 ## [Index](https://github.com/Proyecto1K2024Grupo5/1-K_Proyecto_Gimnasio/tree/main)  
-1. [Eventos](https://github.com/Proyecto1K2024Grupo5/1-K_Proyecto_Gimnasio/edit/main/src/Docs/8.%20PL%5CSQL%20Avanzado.md))
+1. [Eventos](https://github.com/Proyecto1K2024Grupo5/1-K_Proyecto_Gimnasio/blob/main/src/Docs/8.%20PL%5CSQL%20Avanzado.md)
 2. [CTE](https://github.com/Proyecto1K2024Grupo5/1-K_Proyecto_Gimnasio/blob/main/src/Docs/7.%20DQL.md#definición-de-2-consultas-que-utilicen-cte)  
 3. [Tabla](https://github.com/Proyecto1K2024Grupo5/1-K_Proyecto_Gimnasio/blob/main/src/Docs/7.%20DQL.md#creación-de-una-tabla-a-partir-del-resultado-de-una-consulta-compleja)  
 4. [Indices](https://github.com/Proyecto1K2024Grupo5/1-K_Proyecto_Gimnasio/blob/main/src/Docs/7.%20DQL.md#definición-de-dos-índices-que-mejoren-el-rendimiento-de-las-consultas-ya-definidas)
