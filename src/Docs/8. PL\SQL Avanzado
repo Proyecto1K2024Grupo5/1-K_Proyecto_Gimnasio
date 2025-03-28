@@ -13,7 +13,7 @@
 ### Definición de 2 eventos que automaticen tareas con diferente periodicidad.
 
 -- Evento para añadir a una tabla facturacionMensual la facturacion total de cada mes
-
+```sql
 delimiter //
 create event gananciaTotalMes
 on schedule every 1 MONTH 
@@ -32,4 +32,5 @@ begin
 end
 //
 delimiter ;
+```
 
