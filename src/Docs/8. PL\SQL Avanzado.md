@@ -68,6 +68,9 @@ begin
     insert into `totalClientesMembresia` (clientesGold, clientesSilver, clientesBronze, totalClientes) values (
         @miembrosGold, @miembrosSilver, @miembrosBronze, @clientesTotales);
 
+    -- Ademas como se activa al inicio del mes, ponemos todos los contadores de acceso de todos los clientes a 0 para reiniciar el control de acceso
+    update cliente set contAcceso = 0;
+
 end;
 //
 delimiter ;
