@@ -94,7 +94,8 @@ begin
     select tipoMembresia into _tipoMembresia from cliente where nif = new.nif;
     select contAcceso into _contAcceso from cliente where nif = new.nif;
 
-    -- Dependiendo del tipo de membresia que tenga, compruébo si ha alcanzado el numero de reservas de cada tipo
+    -- Dependiendo del tipo de membresia que tenga, compruébo si ha alcanzado el numero de reservas de
+    -- cada tipo
     if _tipoMembresia = "Silver" and _contAcceso = 20 then
         signal sqlstate '45000'
             set Message_TEXT = "Has alcanzado el maximo de reservas para este mes";
