@@ -14,6 +14,13 @@
 
 **Evento para añadir a una tabla facturacionMensual la facturacion total de cada mes**
 ```sql
+
+create or replace table facturacionMensual (
+    registro int auto_increment primary key,
+    facturacion decimal(10,2),
+    beneficio varchar(32)
+);
+
 delimiter //
 create event gananciaTotalMes
 on schedule every 1 MONTH 
@@ -34,6 +41,9 @@ end
 delimiter ;
 ```
 
+**Evento para mantener actualizados mes a mes el numero totales de clientes por tipo de membresia y total**
+```sql
+
 create or replace table totalClientesMembresia (
     idRegistro int auto_increment primary key,
     fechaRegistro date default now(),
@@ -43,9 +53,6 @@ create or replace table totalClientesMembresia (
     totalClientes int
 );
 
-
-**Evento para mantener actualizados mes a mes el numero totales de clientes por tipo de membresia y total**
-```sql
 delimiter //
 create event totalClientes
 on schedule every 1 month
