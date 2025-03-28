@@ -1,1 +1,35 @@
+## [Index](https://github.com/Proyecto1K2024Grupo5/1-K_Proyecto_Gimnasio/tree/main)  
+1. [Eventos](https://github.com/Proyecto1K2024Grupo5/1-K_Proyecto_Gimnasio/blob/main/src/Docs/7.%20DQL.md#definición-de-5-consultas-que-utilicen-subconsultas-tanto-escalares-como-fila-y-de-tabla)
+2. [CTE](https://github.com/Proyecto1K2024Grupo5/1-K_Proyecto_Gimnasio/blob/main/src/Docs/7.%20DQL.md#definición-de-2-consultas-que-utilicen-cte)  
+3. [Tabla](https://github.com/Proyecto1K2024Grupo5/1-K_Proyecto_Gimnasio/blob/main/src/Docs/7.%20DQL.md#creación-de-una-tabla-a-partir-del-resultado-de-una-consulta-compleja)  
+4. [Indices](https://github.com/Proyecto1K2024Grupo5/1-K_Proyecto_Gimnasio/blob/main/src/Docs/7.%20DQL.md#definición-de-dos-índices-que-mejoren-el-rendimiento-de-las-consultas-ya-definidas)
+5. [Plan de ejecucion](https://github.com/Proyecto1K2024Grupo5/1-K_Proyecto_Gimnasio/blob/main/src/Docs/7.%20DQL.md#planes-de-ejecución-antes-y-después-de-la-creación-de-los-índices-comprobando-su-uso)
+6. [Resolución mediante SQL](https://github.com/Proyecto1K2024Grupo5/1-K_Proyecto_Gimnasio/blob/main/src/Docs/7.%20DQL.md#resolución-mediante-sql-de-cada-una-de-las-consultas)  
+
+
+
+
+
+### Definición de 2 eventos que automaticen tareas con diferente periodicidad.
+
+-- Evento para añadir a una tabla facturacionMensual la facturacion total de cada mes
+
+delimiter //
+create event gananciaTotalMes
+on schedule every 1 MONTH 
+do
+begin
+
+    -- Averiguo cuantos clientes tienen la tarifa Gold contratada y lo multiplico por el precio
+
+    select count(*) * 60 into @miembrosGold from cliente where tipoMembresia = "GOLD";
+    select count(*) * 40 into @miembrosSilver from cliente where tipoMembresia = "SILVER";
+    select count(*) * 20 into @miembrosBronze from cliente where tipoMembresia = "BRONZE";
+    set @facturacionTotal = @miembrosGold + @miembrosSilver + @miembrosBronze;
+
+    insert into facturacionMensual(facturacion) values (@facturacionTotal);
+
+end
+//
+delimiter ;
 
