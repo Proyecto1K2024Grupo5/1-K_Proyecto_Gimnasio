@@ -1,0 +1,104 @@
+{
+    "Clientes": [
+        {
+            "NIF": "12345678Y",
+            "Nombre": "Salomon",
+            "Apellidos": "Leonidas",
+            "FechaNacimiento": "1998-12-12",
+            "Email": "anonimo@gmail.com",
+            "FechaAlta": "2024-10-09",
+            "ContAcceso": 0,
+            "TipoMembresia": "Gold"
+        },
+        {
+            "NIF": "28388487Z",
+            "Nombre": "Alejandro",
+            "Apellidos": "Magno",
+            "FechaNacimiento": "1588-02-05",
+            "Email": "elmismisimo@gmail.com",
+            "FechaAlta": "2024-01-02",
+            "ContAcceso": 0,
+            "TipoMembresia": "Gold"
+        },
+        {
+            "NIF": "38848484P",
+            "Nombre": "Franco",
+            "Apellidos": "Franquisimo",
+            "FechaNacimiento": "1939-11-01",
+            "Email": "franco@gmail.com",
+            "FechaAlta": "2024-02-28",
+            "ContAcceso": 0,
+            "TipoMembresia": "Silver"
+        },
+        {
+            "NIF": "29392934Y",
+            "Nombre": "Sofia",
+            "Apellidos": "Panadera",
+            "FechaNacimiento": "1945-03-12",
+            "Email": "quecosote@gmail.com",
+            "FechaAlta": "2023-11-19",
+            "ContAcceso": 0,
+            "TipoMembresia": "Bronze"
+        },
+        {
+            "NIF": "12345677Y",
+            "Nombre": "Victor",
+            "Apellidos": "Sullivan",
+            "FechaNacimiento": "1982-04-13",
+            "Email": "saquenotro@gmail.com",
+            "FechaAlta": "2024-10-09",
+            "ContAcceso": 0,
+            "TipoMembresia": "Gold"
+        },
+        {
+            "NIF": "28282773S",
+            "Nombre": "Natan",
+            "Apellidos": "Drake",
+            "FechaNacimiento": "1993-02-10",
+            "Email": "omgadabro@gmail.com",
+            "FechaAlta": "2024-06-01",
+            "ContAcceso": 0,
+            "TipoMembresia": "Gold"
+        },
+        {
+            "NIF": "21938483O",
+            "Nombre": "Leon",
+            "Apellidos": "Kennedy",
+            "FechaNacimiento": "1995-02-09",
+            "Email": "queguapo@gmail.com",
+            "FechaAlta": "2023-01-21",
+            "ContAcceso": 0,
+            "TipoMembresia": "Bronze"
+        },
+        {
+            "NIF": "48959433Y",
+            "Nombre": "Estan",
+            "Apellidos": "Lin",
+            "FechaNacimiento": "1982-01-16",
+            "Email": "muajaja@gmail.com",
+            "FechaAlta": "2024-03-23",
+            "ContAcceso": 0,
+            "TipoMembresia": "Silver"
+        },
+        {
+            "NIF": "29293834K",
+            "Nombre": "Elver",
+            "Apellidos": "Dulero",
+            "FechaNacimiento": "1983-02-22",
+            "Email": "muyduro@gmail.com",
+            "FechaAlta": "2023-05-12",
+            "ContAcceso": 0,
+            "TipoMembresia": "Silver"
+        },
+        {
+            "NIF": "37273663N",
+            "Nombre": "Van",
+            "Apellidos": "Dolera",
+            "FechaNacimiento": "1991-01-01",
+            "Email": "vandolera@gmail.com",
+            "FechaAlta": "2024-08-19",
+            "ContAcceso": 0,
+            "TipoMembresia": "Gold"
+        }
+    ]
+}
