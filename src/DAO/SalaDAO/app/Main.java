@@ -12,7 +12,7 @@ public class Main {
         int opcion;
         do {
             System.out.println("\nSistema de Gestión de Salas");
-            System.out.println("1. Mostrar todas las salas");
+            System.out.println("1. Mostrar todas las salas ");
             System.out.println("2. Crear sala");
             System.out.println("3. Actualizar sala");
             System.out.println("4. Eliminar sala");
