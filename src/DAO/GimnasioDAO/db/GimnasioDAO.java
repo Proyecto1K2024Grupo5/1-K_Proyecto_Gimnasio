@@ -1,6 +1,6 @@
 package DAO.GimnasioDAO.db;
 
-import model.gimnasio;
+import DAO.GimnasioDAO.model.gimnasio;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
