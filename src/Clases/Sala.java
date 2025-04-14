@@ -1,8 +1,7 @@
-package Gimnasio;
+package Clases;
 
 /**
-* <p>Clase Sala, contiene la información general de cualquier sala dentro del gimnasio.
-* Incluye atributos como NIF del cliente, código del gimnasio, código de la sala, cantidad de clases y horario.</p>
+* Clase Sala
 * @version 01-2025
 * @author Juan Franco
 * @since 07-04-2025
@@ -16,7 +15,7 @@ public class Sala {
     protected String horario;    
 
     /**
-    * Constructor de la clase Sala con todos sus parámetros.
+    * Constructor de la clase Sala
     * @param nifCliente NIF del cliente
     * @param codGimnasio Código del gimnasio
     * @param codigo Código identificador de la sala
@@ -82,7 +81,7 @@ public class Sala {
     }
 
     /**
-    * Método que genera una representación en formato XML de la sala.  
+    * Metodo que genera un formato XML de la sala
     * @return Cadena XML con los datos de la sala
     */
     public String toXml() {
@@ -100,7 +99,7 @@ public class Sala {
     }
 
     /**
-    * Método que genera una representación en formato JSON de la sala.  
+    * Metodo que genera un JSON de la sala
     * @return Cadena JSON con los datos de la sala
     */
     public String toJson() {

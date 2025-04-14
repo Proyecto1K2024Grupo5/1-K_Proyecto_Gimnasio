@@ -1,25 +1,28 @@
 /**
  * @author Akram Allaoui
  */
-package Gimnasio;
+package Clases;
 /**
- * Representa una clase grupal ofrecida en el gimnasio.
+ * Clase Sala
+ * Hereda de Sala
+ * @author Akram Allaoui
+ * @since 07-04-2025
+ * @version 01-2025
  */
-
 public class Clases extends Sala {
 /**
-     * Constructor para crear una clase programada.
+     * Constructor para crear una clase
      * @param nifCliente NIF del cliente que reserva
      * @param codGimnasio Código del gimnasio 
      * @param codigo Código único de la clase 
-     * @param clases Tipo de clase (1=Spinning, 2=Yoga,...)
-     * @param horario Horario en formato "Día HH:MM-HH:MM"
+     * @param clases Tipo de clase
+     * @param horario Horario con formato
      */
     public Clases(String nifCliente, int codGimnasio, int codigo, int clases, String horario) {
         super(nifCliente, codGimnasio, codigo, clases, horario);
     }
 /**
-     * Serializa la clase a formato JSON.
+     * Convierte la clase a formato JSON
      * @return Representación JSON con el código de clase
      */
     public String toJson() {
@@ -35,7 +38,7 @@ public class Clases extends Sala {
 
     }
 /**
-     * Serializa la clase a formato XML.
+     * Convierte la clase a formato XML
      * @return Representación XML con el código de clase
      */
     public String toXml() {

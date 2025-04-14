@@ -1,42 +1,48 @@
 /**
  * @author Akram Allaoui
  */
-package Gimnasio;
+package Clases;
 /**
- * Representa un miembro del gimnasio con sus datos personales y membresía.
+ * Clase Cliente
+ * @author Akram Allaoui
+ * @since 07-04-2025
+ * @version 01-2025
  */
 public class Cliente {
 
     private String nif;
     private String nombre;
     private String apellidos;
-    private String fnac;   // Fecha nacimiento (dd/MM/yyyy)
-    private String fAlta; // Fecha alta (dd/MM/yyyy)
+    private String fnac;
+    private String fAlta;
     private int contAcceso;
-    private String tipoMembresia; // "BASICA", "PREMIUM",... .
-/**
-     * Registra el pago de una mensualidad.
-     * Actualiza automáticamente la fecha de vencimiento.
+    private String tipoMembresia;
+
+    /**
+     * Registra el pago de una mensualidad
+     * Actualiza automáticamente la fecha de vencimiento
      */
     public void pagar(){
         System.out.println("Acabas de pagar una mensualidad");
     }
+
       /**
-     * Realiza una reserva para una clase o instalación.
-     * @return true si la reserva fue exitosa
+     * Realiza una reserva para una clase o instalación
      */
     public void reservar(){
         System.out.println("Acabas de reservar al gimnasio");
     }
+
     /**
-     * Registra un acceso al gimnasio.
-     * Incrementa el contador de accesos.
+     * Registra un acceso al gimnasio
+     * Incrementa el contador de accesos
      */
     public void acceder(){
         this.contAcceso++;
     }
+
     /**
-     * Genera ficha del cliente en formato XML.
+     * Genera ficha del cliente en formato XML
      * @return XML con todos los datos del cliente
      */
     public String toXml() {

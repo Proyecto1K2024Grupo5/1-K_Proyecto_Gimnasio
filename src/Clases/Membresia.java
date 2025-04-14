@@ -1,10 +1,13 @@
 /**
  * @author Cristian Sánchez Martínez
  */
-package Gimnasio;
+package Clases;
 
 /**
- * Clase que representa una membresía de gimnasio, con su tipo y precio.
+ * Clase Membresia
+ * @author Cristian Sanchez
+ * @since 07-04-2025
+ * @version 01-2025
  */
 public class Membresia {
 
@@ -12,9 +15,9 @@ public class Membresia {
     private double precio;   // Precio de la membresía
 
     /**
-     * Constructor de la clase Membresia.
-     * @param tipo Tipo de la membresía.
-     * @param precio Precio de la membresía.
+     * Constructor de la clase Membresia
+     * @param tipo Tipo de la membresía
+     * @param precio Precio de la membresía
      */
     public Membresia(String tipo, double precio) {
         this.tipo = tipo;
@@ -22,8 +25,8 @@ public class Membresia {
     }
 
     /**
-     * Convierte los datos de la membresía a formato XML.
-     * @return Representación XML de la membresía.
+     * Convierte los datos de la membresía a formato XML
+     * @return Representación XML de la membresía
      */
     public String toXml() {
         StringBuilder xmlBuilder = new StringBuilder();
@@ -37,8 +40,8 @@ public class Membresia {
     }
 
     /**
-     * Convierte los datos de la membresía a formato JSON.
-     * @return Representación JSON de la membresía.
+     * Convierte los datos de la membresía a formato JSON
+     * @return Representación JSON de la membresía
      */
     public String toJson() {
         StringBuilder jsonBuilder = new StringBuilder();

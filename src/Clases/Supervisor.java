@@ -1,8 +1,7 @@
-package Gimnasio;
+package Clases;
 
 /**
-* <p>Clase Supervisor, representa un trabajador con rol de supervisor en el gimnasio.  
-* Hereda de la clase {@code Trabajador} y puede dirigir actividades.</p>
+* Clase Supervisor
 * @version 01-2025
 * @author Fernando del Alamo
 * @since 07-04-2025
@@ -10,7 +9,7 @@ package Gimnasio;
 public class Supervisor extends Trabajador {
 
     /**
-    * Constructor completo de la clase Supervisor.
+    * Constructor completo de la clase Supervisor
     * @param nif NIF del supervisor
     * @param nombre Nombre del supervisor
     * @param apellidos Apellidos del supervisor
@@ -22,14 +21,13 @@ public class Supervisor extends Trabajador {
     }
 
     /**
-    * Método que representa la acción de dirigir por parte del supervisor.  
-    * (Actualmente sin implementación).
+    * Metodo de dirigir por parte del supervisor
     */
     public void dirigir() {
     }
 
     /**
-    * Método que genera una representación en formato XML del supervisor.  
+    * Metodo que genera un formato XML del supervisor
     * @return Cadena XML con el NIF del supervisor
     */
     public String toXml() {
@@ -43,7 +41,7 @@ public class Supervisor extends Trabajador {
     }
 
     /**
-    * Método que genera una representación en formato JSON del supervisor.  
+    * Metodo que genera un formato JSON del supervisor
     * @return Cadena JSON con el NIF del supervisor
     */
     public String toJson() {

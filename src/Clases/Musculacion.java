@@ -1,8 +1,7 @@
-package Gimnasio;
+package Clases;
 
 /**
-* <p>Clase Musculacion, representa una sala de musculación en un gimnasio,
-* heredando los atributos y métodos de la clase Sala.</p>
+* Clase Musculacion
 * @version 01-2025
 * @author Juan Franco
 * @since 07-04-2025
@@ -10,7 +9,7 @@ package Gimnasio;
 public class Musculacion extends Sala {
 
     /**
-    * Constructor con todos los parámetros para inicializar la sala de musculación.
+    * Constructor con todos los parámetros
     * @param nifCliente NIF del cliente asociado a la sala
     * @param codGimnasio Código del gimnasio al que pertenece la sala
     * @param codigo Código identificador de la sala de musculación
@@ -22,7 +21,7 @@ public class Musculacion extends Sala {
     }
 
     /**
-    * Método que genera una representación en formato JSON de la sala de musculación.  
+    * Metodo que genera un formato JSON de la sala de musculación.
     * @return Cadena JSON que contiene el código de musculación
     */
     public String toJson() {
@@ -38,7 +37,7 @@ public class Musculacion extends Sala {
     }
 
     /**
-    * Método que genera una representación en formato XML de la sala de musculación.
+    * Metodo que genera un formato XML de la sala de musculación
     * @return Cadena XML que contiene el código de musculación
     */
     public String toXml() {

@@ -1,19 +1,22 @@
 /**
  * @author Cristian Sánchez Martínez
  */
-package Gimnasio;
+package Clases;
 /**
- * Clase que representa un gimnasio con su código y nombre.
+ * Clase Gimnasio
+ * @author Cristian Sanchez
+ * @since 07-04-2025
+ * @version 01-2025
  */
 public class Gimnasio {
 
-    private int codigo;     // Código único del gimnasio
-    private String nombre;  // Nombre del gimnasio
+    private int codigo; // Código único del gimnasio
+    private String nombre; // Nombre del gimnasio
 
     /**
-     * Constructor de la clase Gimnasio.
-     * @param codigo Código único del gimnasio.
-     * @param nombre Nombre del gimnasio.
+     * Constructor de la clase Gimnasio
+     * @param codigo Código único del gimnasio
+     * @param nombre Nombre del gimnasio
      */
     public Gimnasio(int codigo, String nombre) {
         this.codigo = codigo;
@@ -21,8 +24,8 @@ public class Gimnasio {
     }
 
     /**
-     * Convierte los datos del gimnasio a formato JSON.
-     * @return Representación JSON del gimnasio.
+     * Convierte los datos del gimnasio a formato JSON
+     * @return Representación JSON del gimnasio
      */
     public String toJson() {
         StringBuilder jsonBuilder = new StringBuilder();
@@ -38,8 +41,8 @@ public class Gimnasio {
     }
 
     /**
-     * Convierte los datos del gimnasio a formato XML.
-     * @return Representación XML del gimnasio.
+     * Convierte los datos del gimnasio a formato XML
+     * @return Representación XML del gimnasio
      */
     public String toXml() {
         StringBuilder xmlBuilder = new StringBuilder();

@@ -1,8 +1,7 @@
-package Gimnasio;
+package Clases;
 
 /**
-* Clase Trabajador, representa un empleado del gimnasio.
-* Contiene información personal como nombre, apellidos, NIF, fecha de nacimiento y correo electrónico.
+* Clase Trabajador
 * @version 01-2025
 * @author Fernando del Alamo
 * @since 07-04-2025
@@ -16,7 +15,7 @@ public class Trabajador {
     protected String email;   
 
     /**
-    * Constructor de la clase Trabajador con todos los atributos.
+    * Constructor de la clase Trabajador con todos los atributos
     * @param nif NIF del trabajador
     * @param nombre Nombre del trabajador
     * @param apellidos Apellidos del trabajador
@@ -31,7 +30,7 @@ public class Trabajador {
         this.email = email;
     }
 
-    /** Método vacío que representa acción de dirigir */
+    /** Metodo vacío que es de dirigir */
     public void dirigir() {}
 
     /** @return NIF del trabajador */
@@ -85,7 +84,7 @@ public class Trabajador {
     }
 
     /**
-    * Devuelve una representación XML del trabajador.
+    * Devuelve un XML del trabajador
     * @return Cadena en formato XML con los datos del trabajador
     */
     public String toXml() {
@@ -103,7 +102,7 @@ public class Trabajador {
     }
 
     /**
-    * Devuelve una representación JSON del trabajador.
+    * Devuelve un JSON del trabajador
     * @return Cadena en formato JSON con los datos del trabajador
     */
     public String toJson() {

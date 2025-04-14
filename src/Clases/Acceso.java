@@ -1,9 +1,12 @@
 /**
  * @author Akram Allaoui
  */
-package Gimnasio;
+package Clases;
 /**
- * Representa el registro de acceso de un cliente al gimnasio.
+ * Clase Acceso
+ * @author Akram Allaoui
+ * @since 07-04-2025
+ * @version 01-2025
  */
 
 public class Acceso {
@@ -12,12 +15,13 @@ public class Acceso {
     private String nifCliente;
     private String fechaEntrada;
     private String fechaSalida;
-/**
-     * Constructor para crear un registro de acceso.
-     * @param codigo Código único del gimnasio (4 dígitos)
-     * @param nif NIF del cliente (formato 12345678X)
-     * @param feEn Fecha y hora de entrada (formato dd/MM/yyyy HH:mm)
-     * @param fecSa Fecha y hora de salida (formato dd/MM/yyyy HH:mm)
+
+    /**
+     * Constructor para crear un registro de acceso
+     * @param codigo Código único del gimnasio
+     * @param nif NIF del cliente
+     * @param feEn Fecha y hora de entrada
+     * @param fecSa Fecha y hora de salida
      * @throws IllegalArgumentException Si algún parámetro no cumple el formato
      */
 
@@ -30,9 +34,8 @@ public class Acceso {
     }
 
     /**
-     * Genera representación JSON del acceso.
+     * Genera representación JSON del acceso
      * @return String en formato JSON con todos los campos
-     * @example {"Acceso": {"CodigoGimnasio": "1234", "nifCliente": "12345678X", ...}}
      */
 
         public String toJson() {
@@ -51,9 +54,8 @@ public class Acceso {
 
         }
 /**
-     * Genera representación XML del acceso.
+     * Genera representación XML del acceso
      * @return String en formato XML con todos los campos
-     * @example <Acceso><CodigoGimnasio>1234</CodigoGimnasio>...</Acceso>
      */
     public String toXml() {
         StringBuilder jsonBuilder = new StringBuilder();
