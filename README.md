@@ -1,4 +1,4 @@
-# Proyecto intermodular Gimnasio
+# Proyecto intermodular Clases
 
 **Este es el repositorio del grupo 5 de proyecto intermodular de 1ºK DAM.**
 
