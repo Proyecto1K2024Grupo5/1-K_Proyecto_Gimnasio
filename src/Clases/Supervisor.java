@@ -3,7 +3,7 @@ package Clases;
 /**
 * Clase Supervisor
 * @version 01-2025
-* @author Fernando del Alamo
+* @author Fernando Rodriguez
 * @since 07-04-2025
 */
 public class Supervisor extends Trabajador {

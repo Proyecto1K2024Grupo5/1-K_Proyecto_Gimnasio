@@ -3,16 +3,16 @@ package Clases;
 /**
 * Clase Trabajador
 * @version 01-2025
-* @author Fernando del Alamo
+* @author Fernando Rodriguez
 * @since 07-04-2025
 */
 public class Trabajador {
 
-    protected String nif;       
-    protected String nombre;     
-    protected String apellidos;  
-    protected String fnac; 
-    protected String email;   
+    protected String nif;
+    private String nombre;
+    private String apellidos;
+    private String fnac;
+    private String email;
 
     /**
     * Constructor de la clase Trabajador con todos los atributos

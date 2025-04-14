@@ -8,11 +8,11 @@ package Clases;
 */
 public class Sala {
 
-    protected String nifCliente;
-    protected int codGimnasio;  
-    protected int codigo;       
-    protected int clases;       
-    protected String horario;    
+    private String nifCliente;
+    private int codGimnasio;
+    protected int codigo;
+    private int clases;
+    private String horario;
 
     /**
     * Constructor de la clase Sala
@@ -30,52 +30,82 @@ public class Sala {
         this.horario = horario;
     }
 
-    /** @return NIF del cliente */
+    /**
+     * Metodo para obtener el nif del cliente
+     * @return NIF del cliente
+     */
     public String getNifCliente() {
         return nifCliente;
     }
 
-    /** @param nifCliente Nuevo NIF a asignar */
+    /**
+     * Metodo para guardar el nif de un cliente
+     * @param nifCliente Nuevo NIF a asignar
+     */
     public void setNifCliente(String nifCliente) {
         this.nifCliente = nifCliente;
     }
 
-    /** @return Código del gimnasio */
+    /**
+     * Metodo para obtener el codigo del gimnasio
+     * @return Código del gimnasio
+     */
     public int getCodGimnasio() {
         return codGimnasio;
     }
 
-    /** @param codGimnasio Código del gimnasio a asignar */
+    /**
+     * Metodo para guardar el codigo de un gimnasio
+     * @param codGimnasio Código del gimnasio a asignar
+     */
     public void setCodGimnasio(int codGimnasio) {
         this.codGimnasio = codGimnasio;
     }
 
-    /** @return Código de la sala */
+    /**
+     * Metodo para obtener el codigo de la sala
+     * @return Código de la sala
+     */
     public int getCodigo() {
         return codigo;
     }
 
-    /** @param codigo Nuevo código de sala a asignar */
+    /**
+     * Metodo para guardar el codigo de una sala
+     * @param codigo Nuevo código de sala a asignar
+     */
     public void setCodigo(int codigo) {
         this.codigo = codigo;
     }
 
-    /** @return Cantidad de clases disponibles */
+    /**
+     * Metodo para obtener el codigo de la clase
+     * @return Cantidad de clases disponibles
+     */
     public int getClases() {
         return clases;
     }
 
-    /** @param clases Número de clases a asignar */
+    /**
+     * Metodo para guardar el codigo de la clase
+     * @param clases Número de clases a asignar
+     */
     public void setClases(int clases) {
         this.clases = clases;
     }
 
-    /** @return Horario asignado a la sala */
+    /**
+     * Metodo para obtener el horario de una clase
+     * @return Horario asignado a la sala
+     */
     public String getHorario() {
         return horario;
     }
 
-    /** @param horario Nuevo horario de la sala */
+    /**
+     * Metodo para guardar el horario de una clase
+     * @param horario Nuevo horario de la sala
+     */
     public void setHorario(String horario) {
         this.horario = horario;
     }
