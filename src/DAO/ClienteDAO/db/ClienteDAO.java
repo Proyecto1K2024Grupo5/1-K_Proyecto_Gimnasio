@@ -1,6 +1,6 @@
 package DAO.ClienteDAO.db;
 
-import model.Cliente;
+import DAO.ClienteDAO.model.Cliente;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -13,10 +13,10 @@ import java.util.List;
  * Clase PersonaDAO que gestiona el acceso a la base de datos para la entidad Persona.
  * Implementa el patrón Singleton para asegurar una única instancia.
  */
-public class PersonaDAO {
+public class ClienteDAO {
 
     // Instancia única de PersonaDAO
-    private static PersonaDAO instance;
+    private static ClienteDAO instance;
     // Conexión a la base de datos
     private Connection connection;
 
@@ -33,7 +33,7 @@ public class PersonaDAO {
      * Constructor privado para evitar instanciación externa.
      * Obtiene la conexión a la base de datos desde DBConnection.
      */
-    private PersonaDAO() {
+    private ClienteDAO() {
         this.connection = DBConnection.getConnection();
     }
 
@@ -41,9 +41,9 @@ public class PersonaDAO {
      * Método estático para obtener la única instancia de PersonaDAO.
      * @return instancia única de PersonaDAO.
      */
-    public static synchronized PersonaDAO getInstance() {
+    public static synchronized ClienteDAO getInstance() {
         if (instance == null) {
-            instance = new PersonaDAO();
+            instance = new ClienteDAO();
         }
         return instance;
     }

@@ -1,6 +1,6 @@
 package DAO.SalaDAO.view;
 
-import model.Sala;
+import DAO.SalaDAO.model.Sala;
 
 import java.util.List;
 import java.util.Scanner;

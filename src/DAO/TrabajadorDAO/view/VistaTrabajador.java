@@ -1,6 +1,6 @@
 package DAO.TrabajadorDAO.view;
 
-import model.Trabajador;
+import DAO.TrabajadorDAO.model.Trabajador;
 
 import java.util.List;
 import java.util.Scanner;

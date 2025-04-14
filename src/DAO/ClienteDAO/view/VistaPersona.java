@@ -1,6 +1,6 @@
 package DAO.ClienteDAO.view;
 
-import model.Cliente;
+import DAO.ClienteDAO.model.Cliente;
 
 import java.util.List;
 import java.util.Scanner;

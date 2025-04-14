@@ -1,6 +1,6 @@
 package DAO.GimnasioDAO.view;
 
-import model.gimnasio;
+import DAO.GimnasioDAO.model.gimnasio;
 
 import java.util.List;
 import java.util.Scanner;

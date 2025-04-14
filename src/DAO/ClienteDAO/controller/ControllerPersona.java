@@ -1,26 +1,26 @@
 package DAO.ClienteDAO.controller;
 
-import db.PersonaDAO;
-import model.Cliente;
-import view.VistaPersona;
+import DAO.ClienteDAO.db.ClienteDAO;
+import DAO.ClienteDAO.model.Cliente;
+import DAO.ClienteDAO.view.VistaPersona;
 
 import java.sql.SQLException;
 import java.util.List;
 
 public class ControllerPersona {
-    private PersonaDAO personaDAO;
+    private ClienteDAO clienteDAO;
     private VistaPersona vistaPersona;
 
     public ControllerPersona() {
         // Crear conexión a la base de datos
 
-            personaDAO = PersonaDAO.getInstance();
+            clienteDAO = ClienteDAO.getInstance();
             vistaPersona = new VistaPersona();
     }
 
     public void mostrarTodasLasPersonas() {
         try {
-            List<Cliente> personas = personaDAO.getAllPersonas();
+            List<Cliente> personas = clienteDAO.getAllPersonas();
             vistaPersona.mostrarPersonas(personas);
         } catch (SQLException e) {
             e.printStackTrace();
@@ -29,7 +29,7 @@ public class ControllerPersona {
     public void mostraPersonaDNI() {
         try {
             String dni = vistaPersona.obtenerDni();
-            Cliente persona = personaDAO.getPersonaByDni(dni);
+            Cliente persona = clienteDAO.getPersonaByDni(dni);
             vistaPersona.mostrarPersona(persona);
         } catch (SQLException e) {
             e.printStackTrace();
@@ -39,7 +39,7 @@ public class ControllerPersona {
     public void crearPersona() {
         try {
             Cliente persona=vistaPersona.crearPersona();
-            personaDAO.insertPersona(persona);
+            clienteDAO.insertPersona(persona);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -48,7 +48,7 @@ public class ControllerPersona {
     public void actualizarPersona() {
         try {
             Cliente persona=vistaPersona.obtenerDatosActualizados();
-            personaDAO.updatePersona(persona);
+            clienteDAO.updatePersona(persona);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -57,7 +57,7 @@ public class ControllerPersona {
     public void eliminarPersona() {
         try {
             String dni=vistaPersona.obtenerDniAEliminar();
-            personaDAO.deletePersonaByDni(dni);
+            clienteDAO.deletePersonaByDni(dni);
         } catch (SQLException e) {
             e.printStackTrace();
         }

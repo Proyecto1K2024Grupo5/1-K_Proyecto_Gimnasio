@@ -1,8 +1,8 @@
 package DAO.SalaDAO.controller;
 
-import db.SalaDAO;
-import model.Sala;
-import view.VistaSala;
+import DAO.SalaDAO.db.SalaDAO;
+import DAO.SalaDAO.model.Sala;
+import DAO.SalaDAO.view.VistaSala;
 
 import java.sql.SQLException;
 import java.util.List;

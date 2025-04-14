@@ -1,6 +1,6 @@
 package DAO.SalaDAO.db;
 
-import model.Sala;
+import DAO.SalaDAO.model.Sala;
 
 import java.sql.*;
 import java.util.ArrayList;

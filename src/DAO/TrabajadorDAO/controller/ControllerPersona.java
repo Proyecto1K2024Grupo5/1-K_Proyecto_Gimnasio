@@ -1,8 +1,8 @@
 package DAO.TrabajadorDAO.controller;
 
-import db.TrabajadorDAO;
-import model.Trabajador;
-import view.VistaTrabajador;
+import DAO.TrabajadorDAO.db.TrabajadorDAO;
+import DAO.TrabajadorDAO.model.Trabajador;
+import DAO.TrabajadorDAO.view.VistaTrabajador;
 
 import java.sql.SQLException;
 import java.util.List;

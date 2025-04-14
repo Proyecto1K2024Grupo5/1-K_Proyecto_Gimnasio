@@ -1,6 +1,6 @@
 package DAO.ClienteDAO.db;
 
-import model.Cliente;
+import DAO.ClienteDAO.model.Cliente;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -49,7 +49,7 @@ public class DBConnection {
 
     //Crea unos datos de ejemplo
     public static void crearDatosEjemplo() throws SQLException{
-        PersonaDAO personaDAO = PersonaDAO.getInstance();
+        ClienteDAO personaDAO = ClienteDAO.getInstance();
         try {
             if(personaDAO.totalPersonas()==0) {
                 personaDAO.insertPersona(new Cliente("74374738Y", "Fernando", "Rodriguez", "1990-02-15", "Fernan1590@gmail.com", "2021-06-03", 0, "Gold"));

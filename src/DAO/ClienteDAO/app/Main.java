@@ -1,6 +1,6 @@
 package DAO.ClienteDAO.app;
 
-import controller.ControllerPersona;
+import DAO.ClienteDAO.controller.ControllerPersona;
 
 import java.util.Scanner;
 

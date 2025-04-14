@@ -1,6 +1,6 @@
 package DAO.GimnasioDAO.app;
 
-import controller.ControllerGimnasio;
+import DAO.ClienteDAO.controller.ControllerGimnasio;
 
 import java.util.Scanner;
 

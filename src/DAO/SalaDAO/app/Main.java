@@ -1,6 +1,6 @@
 package DAO.SalaDAO.app;
 
-import controller.ControllerSala;
+import DAO.SalaDAO.controller.ControllerSala;
 
 import java.util.Scanner;
 

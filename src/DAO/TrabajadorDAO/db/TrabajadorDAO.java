@@ -1,6 +1,6 @@
 package DAO.TrabajadorDAO.db;
 
-import model.Trabajador;
+import DAO.TrabajadorDAO.model.Trabajador;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

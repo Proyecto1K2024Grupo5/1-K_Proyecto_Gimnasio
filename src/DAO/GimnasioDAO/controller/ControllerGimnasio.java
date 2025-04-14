@@ -1,8 +1,8 @@
 package DAO.GimnasioDAO.controller;
 
-import db.GimnasioDAO;
-import model.gimnasio;
-import view.VistaGimnasio;
+import DAO.GimnasioDAO.db.GimnasioDAO;
+import DAO.GimnasioDAO.view.VistaGimnasio;
+import DAO.GimnasioDAO.model.gimnasio;
 
 import java.sql.SQLException;
 import java.util.List;
