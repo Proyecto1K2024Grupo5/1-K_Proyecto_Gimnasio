@@ -16,7 +16,7 @@
 
 ## 7. [Data Query Language (DQL)](https://github.com/Proyecto1K2024Grupo5/1-K_Proyecto_Gimnasio/blob/main/src/Docs/7.%20DQL.md)
 
-## 8. [PL/SQL Avanzado](https://github.com/Proyecto1K2024Grupo5/1-K_Proyecto_Gimnasio/blob/main/src/Docs/8.%20PL%5CSQL%20Avanzado.md)
+## 8. [[PL/SQL Avanzado](https://github.com/Proyecto1K2024Grupo5/1-K_Proyecto_Gimnasio/blob/main/src/Docs/8.%20PL%5CSQL%20Avanzado.md](https://github.com/Proyecto1K2024Grupo5/1-K_Proyecto_Gimnasio/blob/main/src/Docs/8.%20PL_SQL%20Avanzado.md))
 
 ## 9. [MVC Modelo - Vista - Controlador](https://github.com/Proyecto1K2024Grupo5/1-K_Proyecto_Gimnasio/blob/main/src/Docs/9.%20Reparto%20de%20Tareas%20DAO.md)
 
